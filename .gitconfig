@@ -1,0 +1,18 @@
+[pull]
+	rebase = true
+[user]
+	email = diogo.adrados@si.lan
+	name = Diogo Adrados
+[merge]
+	tool = bcompare
+[mergetool]
+	prompt = false
+[mergetool "bcompare"]
+	trustExitCode = true
+	cmd = `/usr/bin/bcompare $LOCAL $REMOTE $BASE $MERGED`
+[rerere]
+[alias]
+	stash-search = "!f() { git show $(git stash list | cut -d\":\" -f 1) | grep \"$@\" ; }; f"
+	onedance = log --oneline
+[core]
+	editor = vim
